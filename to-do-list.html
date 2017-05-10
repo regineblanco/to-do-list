@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Singe Page Web App</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Dosis|Gloria+Hallelujah" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="one-page-web.css">
+
+</head>
+<body>
+
+
+
+<div class="container">
+	
+	<h1 class="text-center">What to do this week...</h1>
+	<div class="schedule row">
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Monday</h3>
+			<input type="checkbox" id="mon[0]"><span>Write article</span><br>
+			<input type="checkbox" id="mon[1]"><span>Go to HR</span><br>
+			<input type="checkbox" id="mon[2]"><span>Lunch with friends</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+		</div>
+
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Tuesday</h3>
+			<input type="checkbox"><span>Jog</span><br>
+			<input type="checkbox"><span>Meditate</span><br>
+			<input type="checkbox"><span>Go to meet and greet</span><br>
+			<input type="checkbox"><span>Give dog a bath</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+		</div>
+		
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Wednesday</h3>
+			<input type="checkbox"><span>Attend bootcamp</span><br>
+			<input type="checkbox"><span>Lunch with classmates</span><br>
+			<input type="checkbox"><span>Carwash</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+		</div>
+		
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Thursday</h3>
+			<input type="checkbox"><span>Go to gym</span><br>
+			<input type="checkbox"><span>Pray</span><br>
+			<input type="checkbox"><span>Buy meds</span><br>
+			<input type="checkbox"><span>Go to book signing</span><br>
+			<input type="checkbox"><span>Do Javascript</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+		</div>
+		
+		<div class="days col-xs-12 col-lg-2">
+			<h3>Friday</h3>
+			<input type="checkbox"><span>Brunch with BFF</span><br>
+			<input type="checkbox"><span>Go to gym</span><br>
+			<input type="checkbox"><span>Write article</span><br>
+			<input type="checkbox"><span>Attend Wanderland</span><br>
+			<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+		</div>
+
+		<div class="days col-xs-12 col-lg-2">
+			<div class="row">
+				<div class="weekend-one col-xs-12 col-lg-12">
+					<h3>Saturday</h3>
+					<input type="checkbox"><span>Go to Malasimbo</span><br>
+					<input type="checkbox"><span>Drink by the beach</span><br>
+					<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+				</div>
+				<div class="weekend-two col-xs-12 col-lg-12">
+					<h3>Sunday</h3>
+					<input type="checkbox"><span>Chill with fam</span><br>
+					<input type="checkbox"><span>Go to Church</span><br>
+					<i class="fa fa-plus" aria-hidden="true" id="addMon"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center">
+		<button class="add btn btn-primary">Add to List</button>
+		<button class="change btn btn-primary">Change Item</button>
+	</div>
+</div>
+
+<div class="container">
+
+<script>
+
+// ADD ITEMS
+	var mon = []
+	var tues = []
+	var wed = []
+	var thurs = []
+	var fri = []
+	var sat = []
+	var sun = []
+
+	$(".add").click(function(){
+
+		mon.push("input[type='text']")
+
+		$(".add").slideUp(2000).slideDown(2000);
+
+	});
+
+
+// HOVER AND DOUBLE CLICK ITEMS
+	$("span").on ({
+
+		mouseover: function(){
+			$(this).css("font-style", "italic"); },
+
+		mouseout: function(){
+			$(this).css("font-style", "normal"); },
+
+		dblclick: function(){
+			$(this).html("<input type='text' value='"+ $(this).text() +"'>"); }
+	});
+
+// EDIT ITEMS
+	$(".change").click(function(){
+
+		alert("Are you sure?");
+
+		$("span").html($("input[type='text']").val());
+
+	});
+
+
+
+// CHECKBOX ACTIONS
+	$("input[type='checkbox']").click(function(){
+
+    if (this.checked) {
+        $(this).next("span").css("text-decoration", "line-through");
+    }
+
+    else {
+    	$("span").css("text-decoration", "none");
+  	}
+	});
+
+//ADD ITEMS	
+	$("#addMon").click(function(){
+
+		$("#addMon").hide();
+
+		$()
+
+		});
+
+	// $("input[type='text']").blur(function(){
+	//     alert("This input field has lost its focus.");
+
+	    
+	// });
+
+
+
+
+
+
+</script>
+</body>
+</html>
